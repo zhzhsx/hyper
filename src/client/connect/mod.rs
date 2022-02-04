@@ -191,7 +191,7 @@ impl Connected {
 
     // Don't public expose that `Connected` is `Clone`, unsure if we want to
     // keep that contract...
-    #[cfg(feature = "http2")]
+    #[cfg(any(all(feature = "client", feature = "http1"), feature = "http2"))]
     pub(super) fn clone(&self) -> Connected {
         Connected {
             alpn: self.alpn.clone(),
