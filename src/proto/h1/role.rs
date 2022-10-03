@@ -463,7 +463,7 @@ impl Http1Transaction for Server {
     }
 
     fn update_date() {
-        date::update();
+        // date::update();
     }
 }
 
@@ -894,10 +894,10 @@ impl Server {
 
         // cached date is much faster than formatting every request
         if !wrote_date {
-            dst.reserve(date::DATE_VALUE_LENGTH + 8);
-            header_name_writer.write_header_name_with_colon(dst, "date: ", header::DATE);
-            date::extend(dst);
-            extend(dst, b"\r\n\r\n");
+            // dst.reserve(date::DATE_VALUE_LENGTH + 8);
+            // header_name_writer.write_header_name_with_colon(dst, "date: ", header::DATE);
+            // date::extend(dst);
+            // extend(dst, b"\r\n\r\n");
         } else {
             extend(dst, b"\r\n");
         }
