@@ -893,14 +893,14 @@ impl Server {
         }
 
         // cached date is much faster than formatting every request
-        if !wrote_date {
-            // dst.reserve(date::DATE_VALUE_LENGTH + 8);
-            // header_name_writer.write_header_name_with_colon(dst, "date: ", header::DATE);
-            // date::extend(dst);
-            // extend(dst, b"\r\n\r\n");
-        } else {
-            extend(dst, b"\r\n");
-        }
+        // if !wrote_date {
+        // dst.reserve(date::DATE_VALUE_LENGTH + 8);
+        // header_name_writer.write_header_name_with_colon(dst, "date: ", header::DATE);
+        // date::extend(dst);
+        // extend(dst, b"\r\n\r\n");
+        // } else {
+        extend(dst, b"\r\n");
+        // }
 
         Ok(encoder.set_last(is_last))
     }
