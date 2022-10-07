@@ -74,7 +74,7 @@ where
             flush_pipeline: false,
             io,
             read_blocked: false,
-            read_buf: BytesMut::with_capacity(8192),
+            read_buf: BytesMut::with_capacity(8192*2),
             read_buf_strategy: ReadStrategy::default(),
             write_buf,
         }
