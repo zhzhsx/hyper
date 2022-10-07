@@ -66,7 +66,6 @@ where
         let strategy = if io.is_write_vectored() {
             WriteStrategy::Queue
         } else {
-            panic!("why");
             WriteStrategy::Flatten
         };
         let write_buf = WriteBuf::new(strategy);
