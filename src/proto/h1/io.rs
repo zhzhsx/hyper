@@ -66,6 +66,7 @@ where
         let strategy = if io.is_write_vectored() {
             WriteStrategy::Queue
         } else {
+            panic!("why");
             WriteStrategy::Flatten
         };
         let write_buf = WriteBuf::new(strategy);
@@ -73,7 +74,7 @@ where
             flush_pipeline: false,
             io,
             read_blocked: false,
-            read_buf: BytesMut::with_capacity(0),
+            read_buf: BytesMut::with_capacity(8192),
             read_buf_strategy: ReadStrategy::default(),
             write_buf,
         }
